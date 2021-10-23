@@ -19,6 +19,8 @@ class _HomeState extends State<Home> {
           'Fooderlich',
           // 2
           style: Theme.of(context).textTheme.headline6,
+        // instead of previously: theme.textTheme.headline6. Theme.of(context)
+        // returns nearest Theme in Widget tree.
         ),
       ),
       // TODO: Show selected tab
