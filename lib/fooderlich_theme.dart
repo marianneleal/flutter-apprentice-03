@@ -1,8 +1,10 @@
+// ignore_for_file: lines_longer_than_80_chars
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class FooderlichTheme {
-  static TextTheme lightTextTheme = TextTheme(
+  static TextTheme lightTextTheme = TextTheme( //light mode
     bodyText1: GoogleFonts.openSans(
       fontSize: 14.0,
       fontWeight: FontWeight.w700,
@@ -30,7 +32,7 @@ class FooderlichTheme {
     ),
   );
 
-  static TextTheme darkTextTheme = TextTheme(
+  static TextTheme darkTextTheme = TextTheme( //dark mode
     bodyText1: GoogleFonts.openSans(
       fontSize: 14.0,
       fontWeight: FontWeight.w700,
@@ -58,7 +60,7 @@ class FooderlichTheme {
     ),
   );
 
-  static ThemeData light() {
+  static ThemeData light() { // returns the colors tones for light theme using lightTextTheme
     return ThemeData(
       brightness: Brightness.light,
       checkboxTheme: CheckboxThemeData(
