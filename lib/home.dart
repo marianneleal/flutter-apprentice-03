@@ -11,7 +11,27 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  // TODO: Add state variables and functions
+  // 7
+  int _selectedIndex = 0; // state being tracked by _HomeState.
+                          // keeps track of which tab is currently selected, _ davor = private
+
+  // 8
+  static List<Widget> pages = <Widget>[ //defines widgets that will display on each tab
+    // TODO: Replace with Card1
+    Container(color: Colors.red),
+    // TODO: Replace with Card2
+    Container(color: Colors.green),
+    // TODO: Replace with Card3
+    Container(color: Colors.blue)
+  ];
+
+  // 9 handles tapped tab bar items. sets index of item that the user pressed,
+  void _onItemTapped(int index) {
+    setState(() { // notifies the framework that the state of this object has changed, then rebuilds it internally
+      _selectedIndex = index;
+    });
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -25,17 +45,18 @@ class _HomeState extends State<Home> {
         // returns nearest Theme in Widget tree.
         ),
       ),
-      // TODO: Show selected tab
-      body: Center(
-          child: Text('Let\'s get cooking 👩‍🍳',
-              // 3
-              style: Theme.of(context).textTheme.headline1)),
+      // As the framework rebuilds the widgets, it displays the container widget for the selected tab bar item
+      body: pages[_selectedIndex],
       // 4
       bottomNavigationBar: BottomNavigationBar(
         // 5
         selectedItemColor:
           Theme.of(context).textSelectionTheme.selectionColor, //color when item is tapped
-        // TODO: Set selected tab bar
+        // 10 shows user which tab bar item they currently have selected
+        currentIndex: _selectedIndex, //currentIndex tells bottom navigation bar which tab bar item to highlight
+        // 11
+        onTap: _onItemTapped, // handler which updates the state with the correct index (changes color)
+
         // 6
         items: <BottomNavigationBarItem>[
           const BottomNavigationBarItem(
