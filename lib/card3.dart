@@ -53,12 +53,65 @@ class Card3 extends StatelessWidget {
                     style: FooderlichTheme.darkTextTheme.headline2,
                   ),
                   // 9
-                  const SizedBox(height: 30),
+                  const SizedBox(height: 30), // space between text and stuff below
                 ],
               ),
             ),
 
-            // TODO 7: Add Center widget with Chip widget children
+            Center(
+              // 11
+              child: Wrap( // wrap = children next to each other unless no space then next line
+                // 12
+                alignment: WrapAlignment.start, // children left
+                // 13
+                spacing: 12, // space between each child
+                // 14
+                children: [ // list of chip widgets
+                  Chip(
+                    label: Text('Healthy',
+                        style: FooderlichTheme.darkTextTheme.bodyText1),
+                    backgroundColor: Colors.black.withOpacity(0.7),
+                    onDeleted: () {
+                      print('delete');
+                    },
+                  ),
+                  Chip(
+                    label: Text('Vegan',
+                        style: FooderlichTheme.darkTextTheme.bodyText1),
+                    backgroundColor: Colors.black.withOpacity(0.7),
+                    onDeleted: () {
+                      print('delete');
+                    },
+                  ),
+                  Chip(
+                    label: Text('Carrots',
+                        style: FooderlichTheme.darkTextTheme.bodyText1),
+                    backgroundColor: Colors.black.withOpacity(0.7),
+                  ),
+                  Chip(
+                    label: Text('Greens',
+                        style: FooderlichTheme.darkTextTheme.bodyText1),
+                    backgroundColor: Colors.black.withOpacity(0.7),
+                  ),
+                  Chip(
+                    label: Text('Wheat',
+                        style: FooderlichTheme.darkTextTheme.bodyText1),
+                    backgroundColor: Colors.black.withOpacity(0.7),
+                  ),
+                  Chip(
+                    label: Text('Mint',
+                        style: FooderlichTheme.darkTextTheme.bodyText1),
+                    backgroundColor: Colors.black.withOpacity(0.7),
+                  ),
+                  Chip(
+                    label: Text('Lemongrasstree',
+                        style: FooderlichTheme.darkTextTheme.bodyText1),
+                    backgroundColor: Colors.black.withOpacity(0.7),
+                  ),
+                ],
+              ),
+            ),
+
           ],
         ),
       ),
