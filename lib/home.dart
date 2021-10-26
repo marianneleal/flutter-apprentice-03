@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'card1.dart';
 import 'card2.dart';
+import 'card3.dart';
 
 
 
@@ -23,8 +24,7 @@ class _HomeState extends State<Home> {
   static List<Widget> pages = <Widget>[ //defines widgets that will display on each tab
     const Card1(),
     const Card2(),
-    // TODO: Replace with Card3
-    Container(color: Colors.blue)
+    const Card3(),
   ];
 
   // 9 handles tapped tab bar items. sets index of item that the user pressed,
