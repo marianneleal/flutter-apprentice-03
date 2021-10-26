@@ -1,6 +1,8 @@
 // ignore_for_file: lines_longer_than_80_chars
 
 import 'package:flutter/material.dart';
+import 'card1.dart';
+
 
 // 1
 class Home extends StatefulWidget {
@@ -17,8 +19,7 @@ class _HomeState extends State<Home> {
 
   // 8
   static List<Widget> pages = <Widget>[ //defines widgets that will display on each tab
-    // TODO: Replace with Card1
-    Container(color: Colors.red),
+    const Card1(),
     // TODO: Replace with Card2
     Container(color: Colors.green),
     // TODO: Replace with Card3
