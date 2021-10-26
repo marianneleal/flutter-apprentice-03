@@ -17,7 +17,6 @@ class Card1 extends StatelessWidget {
   Widget build(BuildContext context) {
     // 3
     return Center(
-      // TODO: Card1 Decorate Container
       child: Container(
         child: Stack(
           children: [
