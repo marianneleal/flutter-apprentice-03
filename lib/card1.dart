@@ -1,4 +1,8 @@
+// ignore_for_file: lines_longer_than_80_chars
+
 import 'package:flutter/material.dart';
+import 'fooderlich_theme.dart';
+
 
 class Card1 extends StatelessWidget {
   const Card1({Key? key}) : super(key: key);
@@ -15,7 +19,43 @@ class Card1 extends StatelessWidget {
     return Center(
       // TODO: Card1 Decorate Container
       child: Container(
-      // TODO: Add a stack of text
+        child: Stack(
+          children: [
+            // 8
+            Text(
+              category,
+              style: FooderlichTheme.darkTextTheme.bodyText1,
+            ),
+            // 9
+            Positioned( // controls where you position the Text in he Stack
+              child: Text(
+                title,
+                style: FooderlichTheme.darkTextTheme.headline2,
+              ),
+              top: 20, // 20 pixels from the top
+            ),
+            // 10
+            Positioned(
+              child: Text(
+                description, // 30 pixels from the bottom, 0 to the right
+                style: FooderlichTheme.darkTextTheme.bodyText1,
+              ),
+              bottom: 30,
+              right: 0,
+            ),
+            // 11
+            Positioned(
+              child: Text(
+                chef,
+                style: FooderlichTheme.darkTextTheme.bodyText1,
+              ),
+              bottom: 10,
+              right: 0,
+            )
+          ],
+        ),
+
+
       // 1
       padding: const EdgeInsets.all(16), // padding of 16 on all sides of the box
       // 2
