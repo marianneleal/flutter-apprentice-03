@@ -22,6 +22,8 @@ class AuthorCard extends StatefulWidget {
 }
 
 class _AuthorCardState extends State<AuthorCard> {
+  bool _isFavorited = false;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -55,16 +57,18 @@ class _AuthorCardState extends State<AuthorCard> {
             ],
           ),
           IconButton(
-          // 4
-          icon: const Icon(Icons.favorite_border),
+          // 1
+          icon: Icon(_isFavorited ? Icons.favorite : Icons.favorite_border), // if else
           iconSize: 30,
-          color: Colors.grey[400],
-          // 5
-          onPressed: () {
-            const snackBar = SnackBar(content: Text('Added to your Favourites! <3'));
-            ScaffoldMessenger.of(context).showSnackBar(snackBar);
-          }),
-
+          // 2
+          color: Colors.red[400],
+          onPressed: () { // toggle when tapped
+            // 3
+            setState(() {
+              _isFavorited = !_isFavorited;
+            });
+          },
+        )
         ],
   ),
 );
